@@ -5,14 +5,14 @@ const { ObjectId2 } = mongoose.Schema;
 const Lien_de_nomenclatureSchema = new mongoose.Schema({
     compose: {
         type: ObjectId1,
-        ref: Article,
+        ref: 'Article',
         trim: true,
         maxlength: 30,
         required: true,
     },
     composant: {
         type: ObjectId2,
-        ref: Article,
+        ref: 'Article',
         trim: true,
         maxlength: 30,
         required: true,
@@ -26,4 +26,4 @@ const Lien_de_nomenclatureSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-const Lien_de_nomenclature = mongoose.model('Lien_de_nomenclature',Lien_de_nomenclatureSchema)
+module.exports = mongoose.model('Lien_de_nomenclature',Lien_de_nomenclatureSchema)

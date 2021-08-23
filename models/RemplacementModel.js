@@ -5,28 +5,28 @@ const { ObjectId2 } = mongoose.Schema;
 const RemplacementSchema = new mongoose.Schema({
     remplace_compose: {
         type: ObjectId1,
-        ref: Lien_de_nomenclature,
+        ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplace_composant: {
         type: ObjectId1,
-        ref: Lien_de_nomenclature,
+        ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplacant_compose: {
         type: ObjectId2,
-        ref: Lien_de_nomenclature,
+        ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplacant_composant: {
         type: ObjectId2,
-        ref: Lien_de_nomenclature,
+        ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
@@ -39,4 +39,4 @@ const RemplacementSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-const Lien_de_nomenclature = mongoose.model('Remplacement',RemplacementSchema)
+module.exports = mongoose.model('Remplacement',RemplacementSchema)

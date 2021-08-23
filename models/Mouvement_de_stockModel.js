@@ -5,7 +5,7 @@ const { ObjectId1 } = mongoose.Schema;
 const Mouvement_de_stockSchema = new mongoose.Schema({
     reference: {
         type: ObjectId1,
-        ref: Article,
+        ref: 'Article',
         trim: true,
         maxlength: 30,
         required: true
@@ -34,4 +34,4 @@ const Mouvement_de_stockSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-const Operation = mongoose.model('Mouvement_de_stock',Mouvement_de_stockSchema)
+module.exports = mongoose.model('Mouvement_de_stock',Mouvement_de_stockSchema)

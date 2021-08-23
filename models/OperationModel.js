@@ -6,7 +6,7 @@ const { ObjectId3 } = mongoose.Schema;
 const operationSchema = new mongoose.Schema({
     gamme_de_fabrication: {
         type: ObjectId1,
-        ref: Article,
+        ref: 'Article',
         trim: true,
         maxlength: 30,
         required: true
@@ -19,37 +19,37 @@ const operationSchema = new mongoose.Schema({
     },
     machine_numero_section: {
         type: ObjectId2,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     machine_numero_sous_section: {
         type: ObjectId2,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     machine_est_machine:{
         type: ObjectId2,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_numero_section: {
         type: ObjectId3,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_numero_sous_section:{
         type: ObjectId3,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_est_machine:{
         type: ObjectId3,
-        ref: Poste_de_charge,
+        ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
@@ -75,4 +75,4 @@ const operationSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-const Operation = mongoose.model('Operation',operationSchema)
+module.exports = mongoose.model('Operation',operationSchema)
