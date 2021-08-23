@@ -34,23 +34,32 @@ exports.GetArticleById=(req,res,next,id)=>{
 exports.AddArticle = (req, res) => {
     const article= new Article(req.body);
 
-    const schema = Joi.object({
+    // const schema = Joi.object({
 
-        reference: Joi.string().required().maxlength(30),
-        designation: Joi.string().required().maxlength(30).unique(),
-        type_fabrication_achat: Joi.string().required().maxlength(30),
-        unite_achat_stock: Joi.string().required().maxlength(30),
-        delai_en_semaine: Joi.number().required(),
-        PF_ou_MP_ou_Piece_ou_SE: Joi.string().required().maxlength(2)
-    })
+    //     reference: Joi.string().max(30).required(),
+    //     designation: Joi.string().max(30).unique().required(),
+    //     type_fabrication_achat: Joi.string().max(30).required(),
+    //     unite_achat_stock: Joi.string().max(30).required(),
+    //     delai_en_semaine: Joi.number().required(),
+    //     prix_standard: Joi.number(),
+    //     lot_de_reapprovisionnement:Joi.number(),
+    //     stock_mini:Joi.number(),
+    //     stock_maxi:Joi.number(),
+    //     pourcentage_de_perte:Joi.number(),
+    //     inventaire:Joi.number(),
+    //     PF_ou_MP_ou_Piece_ou_SE: Joi.string().max(2).required()
+      
+    
+    
+    // })
 
-    const { error } = schema.validate(article);
+    // const { error } = schema.validate(article);
 
-    if(error) {
-        return res.status(400).json({
-            error: error.details[0].message
-        })
-    }
+    // if(error) {
+    //     return res.status(400).json({
+    //         error: error.details[0].message
+    //     })
+    // }
     article.save((err,article)=>{
         if(err) {
             return res.status(400).json({
@@ -66,23 +75,23 @@ exports.UpdateArticle = (req, res) => {
     const article= req.article;
     article=_.extend(article,req.body)
     
-    const schema = Joi.object({
+    // const schema = Joi.object({
         
-        reference: Joi.string().required().maxlength(30),
-        designation: Joi.string().required().maxlength(30).unique(),
-        type_fabrication_achat: Joi.string().required().maxlength(30),
-        unite_achat_stock: Joi.string().required().maxlength(30),
-        delai_en_semaine: Joi.number().required(),
-        PF_ou_MP_ou_Piece_ou_SE: Joi.string().required().maxlength(2)
-    })
+    //     reference: Joi.string().required().maxlength(30),
+    //     designation: Joi.string().required().maxlength(30).unique(),
+    //     type_fabrication_achat: Joi.string().required().maxlength(30),
+    //     unite_achat_stock: Joi.string().required().maxlength(30),
+    //     delai_en_semaine: Joi.number().required(),
+    //     PF_ou_MP_ou_Piece_ou_SE: Joi.string().required().maxlength(2)
+    // })
 
-    const { error } = schema.validate(article);
+    // const { error } = schema.validate(article);
 
-    if(error) {
-        return res.status(400).json({
-            error: error.details[0].message
-        })
-    }
+    // if(error) {
+    //     return res.status(400).json({
+    //         error: error.details[0].message
+    //     })
+    // }
 
     article.save((err,article)=>{
         if(err) {
