@@ -1,31 +1,31 @@
 const mongoose = require('mongoose')
-const { ObjectId1 } = mongoose.Schema;
-const { ObjectId2 } = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
+// const { ObjectId2 } = mongoose.Schema;
 
 const RemplacementSchema = new mongoose.Schema({
     remplace_compose: {
-        type: ObjectId1,
+        type: ObjectId,
         ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplace_composant: {
-        type: ObjectId1,
+        type: ObjectId,
         ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplacant_compose: {
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,
         required: true,
     },
     remplacant_composant: {
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Lien_de_nomenclature',
         trim: true,
         maxlength: 30,

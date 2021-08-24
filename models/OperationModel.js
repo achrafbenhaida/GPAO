@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
-const { ObjectId1 } = mongoose.Schema;
-const { ObjectId2 } = mongoose.Schema;
-const { ObjectId3 } = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
+// const { ObjectId2 } = mongoose.Schema;
+// const { ObjectId3 } = mongoose.Schema;
 
 const operationSchema = new mongoose.Schema({
     gamme_de_fabrication: {
-        type: ObjectId1,
+        type: ObjectId,
         ref: 'Article',
         trim: true,
         maxlength: 30,
@@ -18,37 +18,37 @@ const operationSchema = new mongoose.Schema({
         unique: true
     },
     machine_numero_section: {
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     machine_numero_sous_section: {
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     machine_est_machine:{
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_numero_section: {
-        type: ObjectId3,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_numero_sous_section:{
-        type: ObjectId3,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
     },
     main_d_oeuvre_est_machine:{
-        type: ObjectId3,
+        type: ObjectId,
         ref: 'Poste_de_charge',
         required: true,
         trim: true
