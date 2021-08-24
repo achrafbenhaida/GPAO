@@ -1,20 +1,20 @@
 const express = require('express');
 const { 
-    GetArticles,
-    AddArticle ,
-    UpdateArticle,
-    DeletedArticle,
-    ShowArticle,
-    GetArticleById
-} = require('../controllers/ArticleController')
+    GetNomenclatures,
+    AddNomenclature ,
+    UpdateNomenclature,
+    DeletedNomenclature,
+    ShowNomenclature,
+    GetNomenclatureById
+} = require('../controllers/NomenclatureController')
 const router = express.Router();
 
-router.get('/',GetArticles);
-router.post('/add',AddArticle);
-router.put('/update/:articleId',UpdateArticle);
-router.delete('/delete/:articleId',DeletedArticle);
-router.get('/show/:articleId',ShowArticle);
+router.get('/',GetNomenclatures);
+router.post('/add',AddNomenclature);
+router.put('/update/:NomenclatureId',UpdateNomenclature);
+router.delete('/delete/:NomenclatureId',DeletedNomenclature);
+router.get('/show/:NomenclatureId',ShowNomenclature);
 
-router.param('articleId',GetArticleById);
+router.param('NomenclatureId',GetNomenclatureById);
 
 module.exports = router;
