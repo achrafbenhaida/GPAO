@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
-const { ObjectId1 } = mongoose.Schema;
-const { ObjectId2 } = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
+
 
 const Lien_de_nomenclatureSchema = new mongoose.Schema({
     compose: {
-        type: ObjectId1,
+        type: ObjectId,
         ref: 'Article',
         trim: true,
         maxlength: 30,
         required: true,
     },
     composant: {
-        type: ObjectId2,
+        type: ObjectId,
         ref: 'Article',
         trim: true,
         maxlength: 30,

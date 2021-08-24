@@ -1,6 +1,6 @@
 const Article = require('../models/ArticleModel');
 const _ = require('lodash');
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 exports.GetArticles = (req, res) => {
     Article.find().exec((err,article)=>{
@@ -37,7 +37,7 @@ exports.AddArticle = (req, res) => {
     // const schema = Joi.object({
 
     //     reference: Joi.string().max(30).required(),
-    //     designation: Joi.string().max(30).unique().required(),
+    //     designation: Joi.string().max(30).required(),
     //     type_fabrication_achat: Joi.string().max(30).required(),
     //     unite_achat_stock: Joi.string().max(30).required(),
     //     delai_en_semaine: Joi.number().required(),
@@ -48,9 +48,6 @@ exports.AddArticle = (req, res) => {
     //     pourcentage_de_perte:Joi.number(),
     //     inventaire:Joi.number(),
     //     PF_ou_MP_ou_Piece_ou_SE: Joi.string().max(2).required()
-      
-    
-    
     // })
 
     // const { error } = schema.validate(article);
@@ -76,13 +73,19 @@ exports.UpdateArticle = (req, res) => {
     article=_.extend(article,req.body)
     
     // const schema = Joi.object({
-        
-    //     reference: Joi.string().required().maxlength(30),
-    //     designation: Joi.string().required().maxlength(30).unique(),
-    //     type_fabrication_achat: Joi.string().required().maxlength(30),
-    //     unite_achat_stock: Joi.string().required().maxlength(30),
+
+    //     reference: Joi.string().max(30).required(),
+    //     designation: Joi.string().max(30).required(),
+    //     type_fabrication_achat: Joi.string().max(30).required(),
+    //     unite_achat_stock: Joi.string().max(30).required(),
     //     delai_en_semaine: Joi.number().required(),
-    //     PF_ou_MP_ou_Piece_ou_SE: Joi.string().required().maxlength(2)
+    //     prix_standard: Joi.number(),
+    //     lot_de_reapprovisionnement:Joi.number(),
+    //     stock_mini:Joi.number(),
+    //     stock_maxi:Joi.number(),
+    //     pourcentage_de_perte:Joi.number(),
+    //     inventaire:Joi.number(),
+    //     PF_ou_MP_ou_Piece_ou_SE: Joi.string().max(2).required()
     // })
 
     // const { error } = schema.validate(article);

@@ -15,6 +15,6 @@ router.put('/update/:articleId',UpdateArticle);
 router.delete('/delete/:articleId',DeletedArticle);
 router.get('/show/:articleId',ShowArticle);
 
-router.param('articleId',GetArticleById)
+router.param('articleId',GetArticleById);
 
 module.exports = router;

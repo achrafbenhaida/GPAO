@@ -46,4 +46,4 @@ const Poste_de_chargeSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-const Poste_de_charge = mongoose.model('Poste_de_charge',Poste_de_chargeSchema)
+module.exports = mongoose.model('Poste_de_charge',Poste_de_chargeSchema)
